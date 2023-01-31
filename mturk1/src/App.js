@@ -7,8 +7,10 @@ function App() {
   let buttons = [];
 
   // Update the submit button
-  const submit = () => {
+  useEffect(() => {
+    /*
     const urlParams = new URLSearchParams(window.location.search);
+    console.log(urlParams);
 
     // create the form element and point it to the correct endpoint
     const form = document.createElement("form");
@@ -38,8 +40,11 @@ function App() {
 
     // attach the form to the HTML document and trigger submission
     document.body.appendChild(form);
-    form.submit();
-  };
+    form.submit();*/
+    document.getElementById("mturk-result").value = JSON.stringify({
+      count: count,
+    });
+  });
 
   for (let i = 0; i < count; i++) {
     buttons.push(
@@ -56,7 +61,6 @@ function App() {
   }
   return (
     <div className="App">
-      <Button onClick={() => submit()}>Submit!</Button>
       {buttons}
       <p>Hello mturk1</p>
     </div>
