@@ -7,7 +7,7 @@ function App() {
   let buttons = [];
 
   // Update the submit button
-  useEffect(() => {
+  const submit = () => {
     const urlParams = new URLSearchParams(window.location.search);
 
     // create the form element and point it to the correct endpoint
@@ -39,7 +39,7 @@ function App() {
     // attach the form to the HTML document and trigger submission
     document.body.appendChild(form);
     form.submit();
-  });
+  };
 
   for (let i = 0; i < count; i++) {
     buttons.push(
@@ -56,6 +56,7 @@ function App() {
   }
   return (
     <div className="App">
+      <Button onClick={() => submit()}>Submit!</Button>
       {buttons}
       <p>Hello mturk1</p>
     </div>
